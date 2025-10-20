@@ -9,7 +9,6 @@ export default function Hero() {
       <Carousel />
 
       <div className="absolute top-0 left-0 w-full z-30">
-        <Notification />
         <Header />
       </div>
 
