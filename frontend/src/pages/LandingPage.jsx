@@ -7,6 +7,10 @@ import About from "../components/LandingPage/About";
 import Collection from "../components/LandingPage/Collection";
 import Loading from "../components/common/Loading";
 import Contact from "../components/LandingPage/Contact";
+import WhyLoveUs from "../components/LandingPage/WhyLoveUs";
+import NewsPage from "../components/LandingPage/NewsPage";
+import Footer from "../components/LandingPage/Footer";
+import PartnerContact from "../components/LandingPage/PartnerContact";
 
 export default function LandingPage() {
   const [loading, setLoading] = useState(true);
@@ -28,7 +32,8 @@ export default function LandingPage() {
       <Essentials />
       <About />
       <Collection />
-      <Contact/>
+      <Contact />
+      <WhyLoveUs />
     </>
   );
 }
