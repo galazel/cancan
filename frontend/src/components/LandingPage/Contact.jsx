@@ -1,27 +1,5 @@
+import { contacts } from "../../../constants";
 export default function Contact() {
-  const contact = [
-    {
-      title: "Complimentary Home Styling",
-      description:
-        "We're here to help curate your private sanctuary in your personal style",
-    },
-    {
-      title: "Warranty Coverage",
-      description:
-        "We're here to help curate your private sanctuary in your personal style",
-    },
-    {
-      title: "Complimentary Home Styling",
-      description:
-        "We're here to help curate your private sanctuary in your personal style",
-    },
-    {
-      title: "Complimentary Home Styling",
-      description:
-        "We're here to help curate your private sanctuary in your personal style",
-    },
-  ];
-
   return (
     <section className="h-[170vh] grid grid-rows-2 gap-1  px-20">
       <div className="flex flex-col justify-center items-center mb-60 p-50">
@@ -36,7 +14,7 @@ export default function Contact() {
             Hassle-Free, Every Time
           </h1>
           <div className="grid grid-cols-4 sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 ">
-            {contact.map((item, index) => {
+            {contacts.map((item, index) => {
               return (
                 <div className="p-4 md:w-1/3 flex items-center" key={index}>
                   <div className="flex-grow pl-6">

@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Quote } from "lucide-react";
+import { reasons } from "../../../constants";
 function WhyLoveUs() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const reasons = [
-    {
-      reason: "CRAFTMANSHIP",
-      description: "ffdfdf",
-    },
-    {
-      reason: "CRAFTMANSHIP",
-      description: "hhthh",
-    },
-    {
-      reason: "CRAFTMANSHIP",
-      description: "vvvv",
-    },
-    {
-      reason: "CRAFTMANSHIP",
-      description: "sdrg",
-    },
-  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((previous) => (previous + 1) % reasons.length);
@@ -29,7 +13,7 @@ function WhyLoveUs() {
   }, [reasons.length]);
 
   return (
-    <section className="h-[120vh] grid-rows-2">
+    <section className="h-[120vh] grid-rows-2 mb-[140vh]" >
       <div className="grid grid-cols-2 h-full">
         <div className="h-full relative">
           <img
@@ -39,7 +23,7 @@ function WhyLoveUs() {
           />
           <Button className="absolute right-8 bottom-8">View Product</Button>
         </div>
-        <div className="grid grid-rows-3">
+        <div className="grid grid-rows-3 bg-black">
           <div>
             <p className="text-center p-5 text-white">WHY PEOPLE LOVE US</p>
           </div>
@@ -55,6 +39,7 @@ function WhyLoveUs() {
                   <li
                     className="list-disc cursor-pointer"
                     onClick={(handleChangeReason) => setCurrentIndex(index)}
+                    key={index}
                   >
                     {item.reason}
                   </li>
@@ -62,6 +47,7 @@ function WhyLoveUs() {
                   <li
                     className="list-none cursor-pointer"
                     onClick={(handleChangeReason) => setCurrentIndex(index)}
+                    key={index}
                   >
                     {item.reason}
                   </li>
@@ -77,7 +63,9 @@ function WhyLoveUs() {
             <p className="text-center p-5 ">INSIGHTS & INSPIRATION</p>
           </div>
           <div className="flex justify-center items-center ">
-            <p className="text-center text-8xl">CANCAN <br /> JOURNAL</p>
+            <p className="text-center text-8xl">
+              CANCAN <br /> JOURNAL
+            </p>
           </div>
           <div className="flex flex-col justify-end items-center pb-8">
             <p>asfdgoafsdjgknsalkfhdfuihsdoafkjdsoafhdsoaf</p>

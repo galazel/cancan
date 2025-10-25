@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { aboutSections } from "../../../constants";
 (function loadExternalDependencies() {
   const scripts = [
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js",
@@ -61,39 +61,6 @@ export default function About() {
     };
   }, [gsapReady]);
 
-  const sections = [
-    {
-      color: "#ff6b6b",
-      image:
-        "https://images.unsplash.com/photo-1722942434635-0b34e98811d8?auto=format&fit=crop&q=80&w=1170",
-      className: "section-design",
-      description:
-        "WE CRAFT AND CURATE STYLISH, FUNCTIONAL FURNITURE TO CREATE YOUR PERSONAL SANCTUARY.",
-    },
-    {
-      color: "#5f27cd",
-      image:
-        "https://images.unsplash.com/photo-1722942434635-0b34e98811d8?auto=format&fit=crop&q=80&w=1170",
-      className: "section-dev",
-      description:
-        "DON'T SEE THE SIZE, COLOUR OR MATERIAL VARIANT YOU WANT? CONTACT US TO ENQUIRE ABOUT CUSTOMISATION OPTIONS.",
-    },
-    {
-      color: "#10ac84",
-      image:
-        "https://images.unsplash.com/photo-1722942434635-0b34e98811d8?auto=format&fit=crop&q=80&w=1170",
-      className: "section-innovate",
-      description: "BRINGING NEW IDEAS TO LIFE THROUGH CREATIVE DESIGN.",
-    },
-    {
-      color: "#feca57",
-      image:
-        "https://images.unsplash.com/photo-1722942434635-0b34e98811d8?auto=format&fit=crop&q=80&w=1170",
-      className: "section-vision",
-      description: "IMAGINE. DESIGN. CREATE. THE FUTURE OF AESTHETICS.",
-    },
-  ];
-
   if (!gsapReady) {
     return (
       <div className="flex items-center justify-center h-screen bg-gray-900 text-white text-3xl">
@@ -108,19 +75,19 @@ export default function About() {
       className="relative w-full h-screen overflow-hidden bg-gray-900"
       style={{ minHeight: "100vh" }}
     >
-      {sections.map((item, i) => (
+      {aboutSections.map((item, i) => (
         <div
           key={i}
-          className={`absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center text-white text-6xl font-extrabold ${item.className}`}
+          className={`absolute w-full h-screen flex flex-col  pt-50 pl-20 text-white text-6xl font-extrabold ${item.className}`}
           style={{
-            zIndex: sections.length - i,
+            zIndex: aboutSections.length - i,
             backgroundImage: `url(${item.image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-black/50 p-6 rounded-xl text-center">
-            <p className="text-4xl font-bold">{item.description}</p>
+          <div className=" w-2xl ">
+            <p className="text-4xl font-bold text-black">{item.description}</p>
           </div>
         </div>
       ))}
@@ -131,8 +98,8 @@ export default function About() {
             The Scroll Experience Continues...
           </p>
           <p className="text-lg">
-            This content appears once the animated sections are fully revealed
-            and the main container unpins.
+            This content appears once the animated aboutSections are fully
+            revealed and the main container unpins.
           </p>
         </div>
       </div>

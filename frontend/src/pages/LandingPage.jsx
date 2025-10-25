@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import Hero from "../components/LandingPage/Hero";
 import BestSellers from "../components/LandingPage/BestSellers";
 import Essentials from "../components/LandingPage/Essentials";
@@ -26,7 +25,7 @@ export default function LandingPage() {
     return <Loading />;
   }
   return (
-    <>
+    <main>
       <Hero />
       <BestSellers />
       <Essentials />
@@ -34,6 +33,9 @@ export default function LandingPage() {
       <Collection />
       <Contact />
       <WhyLoveUs />
-    </>
+      <NewsPage/>
+      <Footer/>
+    
+    </main>
   );
 }
